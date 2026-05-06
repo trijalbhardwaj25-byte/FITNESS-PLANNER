@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
@@ -26,4 +27,34 @@ button {
     background-color: #00ff99;
     cursor: pointer;
     font-weight: bold;
+=======
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    color: #00ff99;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00ff99;
+    cursor: pointer;
+    font-weight: bold;
+>>>>>>> b1dbf757ce7b38409efcddabb3d922a84da50dae
 }
