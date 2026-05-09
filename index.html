@@ -8,29 +8,26 @@
 </head>
 <body>
 
-    <h1>AI Fitness & Diet Planner</h1>
+    <body>
+    <div class="container">
+        <h1>AI Fitness & Diet Planner</h1>
 
-    <input type="number" id="weight" placeholder="Enter your weight in kg">
-    <br><br>
+        <input type="number" id="weight" placeholder="Enter your weight in kg">
+        <input type="number" id="height" placeholder="Enter your height in cm">
+        <input type="number" id="age" placeholder="Enter your age">
 
-    <input type="number" id="height" placeholder="Enter your height in cm">
-    <br><br>
+        <select id="goal">
+            <option value="loss">Fat Loss</option>
+            <option value="maintain">Maintenance</option>
+            <option value="gain">Muscle Gain</option>
+        </select>
 
-    <input type="number" id="age" placeholder="Enter your age">
-    <br><br>
+        <button onclick="calculateCalories()">Generate Plan</button>
 
-    <select id="goal">
-        <option value="loss">Fat Loss</option>
-        <option value="maintain">Maintenance</option>
-        <option value="gain">Muscle Gain</option>
-    </select>
-    <br><br>
-
-    <button onclick="calculateCalories()">Generate Plan</button>
-
-    <div id="result"></div>
+        <div id="result"></div>
+    </div>
 
     <script src="script.js"></script>
-
+</body>
 </body>
 </html>
