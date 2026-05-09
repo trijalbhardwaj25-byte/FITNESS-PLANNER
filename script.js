@@ -8,7 +8,6 @@ function calculateCalories() {
     let workout;
     let meal;
 
-    // Calorie logic
     if (goal === "loss") {
         calories = weight * 25;
         workout = "Incline Walking + Full Body Strength Training";
@@ -23,15 +22,10 @@ function calculateCalories() {
         meal = "High-protein calorie surplus diet";
     }
 
-    // Protein
     let protein = weight * 2;
-
-    // BMI
     let bmi = (weight / ((height / 100) * (height / 100))).toFixed(1);
 
-    // BMI Category
     let category;
-
     if (bmi < 18.5) {
         category = "Underweight";
     } else if (bmi < 25) {
@@ -42,12 +36,21 @@ function calculateCalories() {
         category = "Obese";
     }
 
-    // Final Output
+    // Simulated AI-style recommendation
+    let aiAdvice =
+        "Based on your goal, aim for " + calories + " kcal and " +
+        protein + " g of protein daily. " +
+        "Follow the workout plan consistently, prioritize sleep, " +
+        "and stay hydrated for the best results.";
+
     document.getElementById("result").innerHTML =
         "<h2>Your Fitness Plan</h2>" +
         "<p><strong>Calories:</strong> " + calories + " kcal/day</p>" +
         "<p><strong>Protein:</strong> " + protein + " g/day</p>" +
         "<p><strong>BMI:</strong> " + bmi + " (" + category + ")</p>" +
         "<p><strong>Workout:</strong> " + workout + "</p>" +
-        "<p><strong>Meal Suggestion:</strong> " + meal + "</p>";
+        "<p><strong>Meal Suggestion:</strong> " + meal + "</p>" +
+        "<hr>" +
+        "<h3>AI Personalized Recommendation</h3>" +
+        "<p>" + aiAdvice + "</p>";
 }
