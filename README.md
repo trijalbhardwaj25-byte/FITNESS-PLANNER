@@ -1,33 +1,45 @@
- AI Fitness & Nutrition Planner
+# AI Fitness & Nutrition Planner
 
-A modern web application that generates personalized fitness and nutrition recommendations based on user inputs.
+This is a web application I built to help users generate a personalized fitness plan based on their weight, height, age, and goal. The project calculates daily calorie and protein targets, estimates BMI, suggests workout and diet recommendations, and allows users to track their weight over time.
 
- 🚀 Live Demo
+## Live Demo
 https://trijalbhardwaj25-byte.github.io/FITNESS-PLANNER/
 
- ✨ Features
-- Calorie target calculation
+## Features
+
+- Daily calorie target calculation
 - Protein recommendation
-- BMI and BMI category
+- BMI calculation with category
 - Goal-based workout suggestions
-- Meal suggestions
-- Personalized recommendation engine
-- Progress tracking with browser storage
+- Diet recommendations
+- Personalized fitness advice
+- Weight progress tracker
 - Interactive weight chart
 
-🛠️ Technologies Used
+## Technologies Used
+
 - HTML
 - CSS
 - JavaScript
 - Chart.js
-- Git
+- Git and GitHub
 - GitHub Pages
 
-📈 Progress Tracker
-Users can save their weight over time and visualize progress using an interactive chart.
+## How It Works
 
-🎯 Purpose
-This project was built to demonstrate frontend development, data persistence, and personalized recommendation logic.
+The user enters their weight, height, age, and fitness goal. The application then generates a complete fitness plan, including calorie intake, protein target, BMI, and workout recommendations. Users can also save their weight entries and view their progress in a chart.
 
-#👨‍💻 Author
+## Why I Built This Project
+
+I am interested in fitness and software development, so I wanted to build a project that combines both. This project helped me practice frontend development, JavaScript logic, browser storage, and data visualization.
+
+## Future Improvements
+
+- User authentication
+- Backend and database integration
+- Real AI API integration
+- Mobile application version
+
+## Author
+
 Trijal Bhardwaj
