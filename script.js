@@ -53,4 +53,50 @@ function calculateCalories() {
         "<hr>" +
         "<h3>AI Personalized Recommendation</h3>" +
         "<p>" + aiAdvice + "</p>";
+}function saveProgress() {
+    let weight = document.getElementById("weight").value;
+
+    if (!weight) {
+        alert("Please enter your weight first.");
+        return;
+    }
+
+    let progressData = JSON.parse(localStorage.getItem("progressData")) || [];
+
+    let entry = {
+        date: new Date().toLocaleDateString(),
+        weight: weight
+    };
+
+    progressData.push(entry);
+
+    localStorage.setItem("progressData", JSON.stringify(progressData));
+
+    displayProgress();
 }
+
+function displayProgress() {
+    let progressData = JSON.parse(localStorage.getItem("progressData")) || [];
+
+    let html = "<h3>Progress History</h3>";
+
+    if (progressData.length === 0) {
+        html += "<p>No entries saved yet.</p>";
+    } else {
+        html += "<ul>";
+
+        for (let i = 0; i < progressData.length; i++) {
+            html += "<li>" +
+                progressData[i].date +
+                " - " +
+                progressData[i].weight +
+                " kg</li>";
+        }
+
+        html += "</ul>";
+    }
+
+    document.getElementById("progress").innerHTML = html;
+}
+
+displayProgress();
