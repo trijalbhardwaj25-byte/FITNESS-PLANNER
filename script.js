@@ -1,3 +1,4 @@
+let weightChart = null;
 function calculateCalories() {
     let weight = document.getElementById("weight").value;
     let height = document.getElementById("height").value;
@@ -64,7 +65,7 @@ function calculateCalories() {
     let progressData = JSON.parse(localStorage.getItem("progressData")) || [];
 
     let entry = {
-        date: new Date().toLocaleDateString(),
+        date: new Date().toLocaleString(),
         weight: weight
     };
 
@@ -97,6 +98,51 @@ function displayProgress() {
     }
 
     document.getElementById("progress").innerHTML = html;
+    drawChart(progressData);
 }
 
 displayProgress();
+l
+
+function drawChart(progressData) {
+    const canvas = document.getElementById("weightChart");
+
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+
+    const labels = progressData.map(entry => entry.date);
+    const weights = progressData.map(entry => Number(entry.weight));
+
+    if (weightChart) {
+        weightChart.destroy();
+    }
+
+    if (weights.length === 0) {
+        return;
+    }
+
+    weightChart = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Weight (kg)",
+                data: weights,
+                borderColor: "blue",
+                backgroundColor: "rgba(0, 0, 255, 0.1)",
+                borderWidth: 3,
+                tension: 0.3,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+}
